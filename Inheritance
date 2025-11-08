@@ -1,0 +1,68 @@
+#include <iostream> 
+using namespace std;
+class Base {
+public:
+void displayBase() {
+cout << "This is Base Class  " << endl;
+}
+};
+class Derived : public Base { 
+public:
+void displayDerived() {
+cout << "This is Derived class " << endl;
+}
+};
+class X {
+public:
+void displayX() {
+cout << "This is class X " << endl;
+}
+};
+class Y { 
+public:
+void displayY() {
+cout << "This is class Y " << endl;
+}
+};
+class Z : public X, public Y { 
+public:
+void displayZ() {
+cout << "This is class Z " << endl;
+}
+};
+class Parent {
+public:
+void displayParent() {
+cout << "This is Parent Class " << endl;
+}
+};
+class Child : public Parent { 
+public:
+void displayChild() {
+cout << "This is Child Class " << endl;
+}
+};
+class GrandChild : public Child { 
+public:
+void displayGrandChild() {
+cout << "This is GrandChild Class " << endl;
+}
+}; 
+int main() {
+cout << "\n // Single Inheritance " << endl; 
+Derived b;
+b.displayBase();
+b.displayDerived();
+cout << "\n // Multiple Inheritance " << endl; 
+Z z;
+z.displayX();
+z.displayY();
+z.displayZ();
+ 
+cout << "\n // Multi-level Inheritance " << endl; 
+GrandChild gc;
+gc.displayParent(); 
+gc.displayChild(); 
+gc.displayGrandChild();
+return 0;
+}
